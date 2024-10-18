@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمة IPTV الممتازة - بث مباشر عالي الجودة</title>
+    <meta name="description"
+        content="استمتع بأفضل خدمة IPTV مع آلاف القنوات والأفلام والمسلسلات بجودة عالية على جميع أجهزتك.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #e8491d;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --gradient-bg: linear-gradient(135deg, #3498db, #8e44ad);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--gradient-bg);
+            color: #ffffff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header .highlight {
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .language-select {
+            padding: 8px 12px;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        #showcase {
+            background: url('/OIP\ \(1\).jpeg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #showcase::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        #showcase .container {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        #showcase h1 {
+            font-size: 4rem;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        #showcase p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: #d13a0f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        #features {
+            padding: 5rem 0;
+            background: #fff;
+        }
+
+        #features .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            flex-basis: 30%;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-box i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover i {
+            transform: scale(1.1);
+        }
+
+        #pricing {
+            padding: 5rem 0;
+            background: var(--bg-color);
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .pricing-plan {
+            flex-basis: 30%;
+            background: #fff;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-plan:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        .pricing-plan::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-color);
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+
+        #testimonials {
+            padding: 5rem 0;
+            background: var(--secondary-color);
+            color: #fff;
+        }
+
+        .testimonials-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .testimonial {
+            flex-basis: 30%;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial .client-name {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+
+            .feature-box,
+            .pricing-plan,
+            .testimonial {
+                flex-basis: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">IPTV</span> الممتازة</h1>
+            </div>
+            <nav>
+                <select class="language-select" onchange="changeLanguage(this.value)">
+                    <option value="ar" selected>عربي</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>أفضل تجربة مشاهدة IPTV</h1>
+            <p>استمتع بآلاف القنوات التلفزيونية والأفلام والمسلسلات بجودة عالية</p>
+            <a href="#" class="btn">ابدأ الآن</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="feature-box float-animation">
+                <i class="fas fa-tv"></i>
+                <h3>جودة عالية</h3>
+                <p>استمتع بمحتوى بجودة HD و4K على جميع أجهزتك</p>
+            </div>
+            <div class="feature-box float-animation" style="animation-delay: 0.5s;">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>دعم متعدد الأجهزة</h3>
+                <p>شاهد على التلفزيون الذكي والهاتف والكمبيوتر</p>
+            </div>
+            <div class="feature-box float-animation" style="animation-delay: 1s;">
+                <i class="fas fa-globe"></i>
+                <h3>محتوى متنوع</h3>
+                <p>قنوات رياضية وترفيهية وإخبارية وأكثر</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>اختر الخطة المناسبة لك</h2>
+            <div class="pricing-container">
+                <div class="pricing-plan">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="plan-price">$9.99/شهر</div>
+                    <ul>
+                        <li>500+ قناة</li>
+                        <li>جودة HD</li>
+                        <li>دعم جهازين</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>الباقة المتميزة</h3>
+                    <div class="plan-price">$14.99/شهر</div>
+                    <ul>
+                        <li>1000+ قناة</li>
+                        <li>جودة 4K</li>
+                        <li>دعم 4 أجهزة</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>الباقة العائلية</h3>
+                    <div class="plan-price">$19.99/شهر</div>
+                    <ul>
+                        <li>1500+ قناة</li>
+                        <li>جودة 4K</li>
+                        <li>دعم 6 أجهزة</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>ماذا يقول عملاؤنا</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <img src="/th.jpeg" alt="صورة العميل - أحمد محمد">
+                    <p>"أفضل خدمة IPTV جربتها على الإطلاق. جودة البث ممتازة والقنوات متنوعة."</p>
+                    <p class="client-name">- أحمد محمد</p>
+                </div>
+                <div class="testimonial">
+                    <img src="/th.jpeg" alt="صورة العميل - سارة علي">
+                    <p>"الدعم الفني ممتاز والخدمة موثوقة جداً. أنصح بها بشدة لكل محبي المشاهدة عبر الإنترنت."</p>
+                    <p class="client-name">- سارة علي</p>
+                </div>
+                <div class="testimonial">
+                    <img src="/th.jpeg" alt="صورة العميل - محمد خالد">
+                    <p>"مجموعة القنوات الرياضية رائعة! لم أفوت أي مباراة منذ اشتراكي في الخدمة."</p>
+
+                    <p class="client-name">- محمد خالد</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>حقوق النشر &copy; 2024 - خدمة IPTV الممتازة</p>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage(lang) {
+            console.log('تغيير اللغة إلى: ' + lang);
+            // Here you would typically implement the language change logic
+        }
+
+        // Intersection Observer for animated entrances
+        const animateOnScroll = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(animateOnScroll, {
+            root: null,
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.feature-box, .pricing-plan, .testimonial').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
